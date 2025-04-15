@@ -1,0 +1,15 @@
+[package]
+name = "bi18n"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+ahash = { version = "0.8.11", features = ["serde"] }
+lazy_static = "1.5.0"
+parking_lot = "0.12.3"
+serde = { version = "1.0.219", features = ["derive"] }
+
+
+[dev-dependencies]
+insta = "1.42.2"
+serde_json = "1.0.140"
