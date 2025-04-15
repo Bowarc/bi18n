@@ -2,6 +2,9 @@
 name = "bi18n"
 version = "0.1.0"
 edition = "2024"
+description = "Barebone i18n crate, usable for web interfaces"
+repository = "https://github.com/bowarc/bi18n"
+license = "MIT OR Apache-2.0"
 
 [dependencies]
 ahash = { version = "0.8.11", features = ["serde"] }
