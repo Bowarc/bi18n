@@ -9,11 +9,8 @@ impl I18n {
         Self{locale, map}
     }
 
-    pub fn get(&self, key: crate::Key) -> &String {
-        self.try_get(key).unwrap()
-    }
-    pub fn try_get(&self, key: crate::Key) -> Option<&String> {
-        self.map.get(&key)
+    pub fn try_get(&self, key: &crate::Key) -> Option<&String> {
+        self.map.get(key)
     }
 
     pub fn locale(&self) -> &crate::Locale {
