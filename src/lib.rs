@@ -114,8 +114,9 @@ pub fn set_language(locale: impl Into<Locale>) -> Result<(), LocaleNotFound> {
     }
 
     if let Some(new) = DICTIONARY.write().remove(&locale) {
-        set(new)
+        set(new);
+        return Ok(())
     }
 
-    Ok(())
+    Err(LocaleNotFound)
 }

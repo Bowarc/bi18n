@@ -1,6 +1,6 @@
 [package]
 name = "bi18n"
-version = "0.2.0"
+version = "0.3.0"
 edition = "2024"
 description = "Barebone i18n crate, usable for web interfaces"
 repository = "https://github.com/bowarc/bi18n"
