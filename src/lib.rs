@@ -13,6 +13,7 @@ lazy_static::lazy_static! {
 }
 
 /// Convenience macro for i18n* functions
+/// /!\ Theses functions can panic on error, if you're unsure, use the try_* functions
 #[macro_export]
 macro_rules! i18n {
     ($key:expr) => {
@@ -35,7 +36,7 @@ macro_rules! try_i18n {
 }
 
 /// Fetches the translation corresponding to the given key in the currently saved i18n
-/// Panics if not found
+/// Panics if not found, use try_i18n_current if you're not sure
 pub fn i18n_current(key: impl Into<Key>) -> String {
     try_i18n_current(key).unwrap()
 }
@@ -45,8 +46,8 @@ pub fn try_i18n_current(key: impl Into<Key>) -> Option<String> {
     CURRENT.read().as_ref()?.try_get(&key.into()).cloned()
 }
 
-
 /// Fetches the translation corresponding to the given key and given locale in all saved i18n (current & saved)
+/// Panics if not found, use try_i18n_with_locale if you're not sure
 pub fn i18n_with_locale(key: impl Into<Key>, locale: impl Into<Locale>) -> String {
     try_i18n_with_locale(key, locale).unwrap()
 }
